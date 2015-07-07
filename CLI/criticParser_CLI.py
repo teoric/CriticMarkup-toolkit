@@ -311,14 +311,14 @@ parser.add_argument('-m2', help='Use the markdown2 python module. If left blank 
 parser.add_argument('-o','--output', help='Path to store the output file, including file name', metavar='out-file', type=argparse.FileType('wt'), required=False)
 parser.add_argument('-css','--css', help='Path to a custom CSS file, including file name', metavar='in-file', type=argparse.FileType('rt'),required=False)
 parser.add_argument('-b', '--browser', help='View the output file in the default browser after saving.', action='store_true')
+parser.add_argument('-e', '--encoding', help='Encoding of input (default: UTF-8)', action='store', default="UTF-8")
+
 
 args = parser.parse_args()
 try:
 	
-
-
 	if args.source:
-		inputFile = codecs.open(args.source, "r", encoding="UTF-8")
+		inputFile = codecs.open(args.source, "r", encoding=args.encoding)
 		inputText = inputFile.read()
 		inputFile.close()
 	else:
