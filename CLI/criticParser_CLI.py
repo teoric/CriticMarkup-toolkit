@@ -318,7 +318,7 @@ try:
 
 
 	if args.source:
-		inputFile = open(args.source, "r")
+		inputFile = codecs.open(args.source, "r", encoding="UTF-8")
 		inputText = inputFile.read()
 		inputFile.close()
 	else:
