@@ -372,7 +372,7 @@ try:
 		filesource.close()
 		print "\nOutput file created:  ", abs_path
 	else:
-		path, filename = os.path.split(args.source)
+		path, filename = os.path.split(os.path.abspath(args.source))
 		print "Converting >> " + args.source
 		output_file = path+'/'+filename.split(os.extsep, 1)[0]+'_CriticParseOut.html'
 		file = open(output_file, 'w')
