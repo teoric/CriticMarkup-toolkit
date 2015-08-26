@@ -349,15 +349,15 @@ try:
 
 
 
-	
+        enc_info = "\n" + '<meta charset="{}">'.format(args.encoding)
 
 	if (args.css):
 		css_file = args.css
 		cssText = css_file.read()
 		css_file.close()
-		h = head + cssText + bodybegin + h + headend
+		h = head + enc_info + cssText + bodybegin + h + headend
 	else:
-	 	h = jq + a + bodybegin + h + headend
+		h = jq + enc_info + a + bodybegin + h + headend
 
 
 
